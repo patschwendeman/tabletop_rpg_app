@@ -13,15 +13,15 @@ router.put("/:_id", async (req, res)=>{
     
     
     try {
-        await generalPassiveModel.findById(_id,  (err, updatedPassive)=> {
+        const updatedPassive = await generalPassiveModel.findById(_id)
             updatedPassive.info[0].passive.initiative= newPassive.initiative;
             updatedPassive.info[0].passive.honor= newPassive.honor;
             updatedPassive.info[0].passive.parade= newPassive.parade;
             updatedPassive.info[0].passive.moral= newPassive.moral;
            
-            updatedPassive.save();
-            res.send("Passive Updated");
-        });
+        await updatedPassive.save();
+        res.send("Passive Updated");
+    
         
     }
     catch(err){

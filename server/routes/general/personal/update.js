@@ -17,15 +17,15 @@ router.put("/:_id", async (req, res)=>{
     
     
     try {
-        await generalPersonalModel.findById(_id,  (err, updatedPersonal)=> {
+        const updatedPersonal = await generalPersonalModel.findById(_id)
             updatedPersonal.info[0].personal.name= newPersonal.name;
             updatedPersonal.info[0].personal.race= newPersonal.race;
             updatedPersonal.info[0].personal.class= newPersonal.class;
             updatedPersonal.info[0].personal.religion= newPersonal.religion;
  
-            updatedPersonal.save();
+            await updatedPersonal.save();
             res.send("personal Updated");
-        });
+     
         
     }
     catch(err){

@@ -98,7 +98,7 @@ router.put("/:_id", async (req, res)=>{
     
     
     try {
-        await skillModel.findById(_id,  (err, updatedSkill)=> {
+        const updatedSkill = await skillModel.findById(_id)
             updatedSkill.skills[0].main= req.body[0].main;
 
             updatedSkill.skills[0].skills[0].name= req.body[0].skills[0].name;
@@ -139,9 +139,9 @@ router.put("/:_id", async (req, res)=>{
             updatedSkill.skills[2].skills[4].name= req.body[2].skills[4].name;
             updatedSkill.skills[2].skills[4].value= req.body[2].skills[4].value;
            
-            updatedSkill.save();
+            await updatedSkill.save();
             res.send("Skill Updated");
-        });
+       
         
     }
     catch(err){

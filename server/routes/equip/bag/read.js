@@ -9,9 +9,9 @@ router.get("/:_id", async (req, res)=>{
 
     const _id = req.params._id;
     try {
-        await equipBagModel.findById(_id, (err, result)=> {
-            res.send(result);
-        });
+        result= await equipBagModel.findById(_id)
+        res.send(result);
+      
         
     }
     catch(err){

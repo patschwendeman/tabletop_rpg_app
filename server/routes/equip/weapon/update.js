@@ -27,7 +27,7 @@ router.put("/:_id", async (req, res)=>{
       ]}
 
     try {
-        await equipWeaponModel.findById(_id,  (err, updatedWeapon)=> {
+        const updatedWeapon = await equipWeaponModel.findById(_id)
             updatedWeapon.weapon[0].name= req.body.weapon[0].name;
             updatedWeapon.weapon[0].value= req.body.weapon[0].value;
             updatedWeapon.weapon[1].name= req.body.weapon[1].name;
@@ -36,9 +36,9 @@ router.put("/:_id", async (req, res)=>{
             updatedWeapon.weapon[2].value= req.body.weapon[2].value;
             
  
-            updatedWeapon.save();
+            await updatedWeapon.save();
             res.send("Weapon Updated");
-        });
+      
         
     }
     catch(err){

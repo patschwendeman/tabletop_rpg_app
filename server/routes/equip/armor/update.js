@@ -40,7 +40,8 @@ router.put("/:_id", async (req, res)=>{
     
     
     try {
-        await equipArmorModel.findById(_id,  (err, updatedArmor)=> {
+      
+        const updatedArmor = await equipArmorModel.findById(_id);
             updatedArmor.armor[0].name= req.body.armor[0].name;
             updatedArmor.armor[0].value= req.body.armor[0].value;
             updatedArmor.armor[1].name= req.body.armor[1].name;
@@ -51,9 +52,9 @@ router.put("/:_id", async (req, res)=>{
             updatedArmor.armor[3].value= req.body.armor[3].value;
 
  
-            updatedArmor.save();
+            await updatedArmor.save();
             res.send("Armor Updated");
-        });
+     
         
     }
     catch(err){

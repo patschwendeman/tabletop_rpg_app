@@ -8,9 +8,9 @@ router.get("/:_id", async (req, res)=>{
 
     const _id = req.params._id;
     try {
-        await generalPersonalModel.findById(_id, (err, result)=> {
-            res.send(result);
-        });
+        const result = await generalPersonalModel.findById(_id)
+        res.send(result);
+
         
     }
     catch(err){

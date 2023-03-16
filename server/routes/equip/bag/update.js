@@ -33,7 +33,7 @@ router.put("/:_id", async (req, res)=>{
     
     
     try {
-        await equipBagModel.findById(_id,  (err, updatedBag)=> {
+        const updatedBag = await equipBagModel.findById(_id)
             updatedBag.bag[0].name= req.body.bag[0].name;
             updatedBag.bag[0].value= req.body.bag[0].value;
             updatedBag.bag[1].name= req.body.bag[1].name;
@@ -41,9 +41,9 @@ router.put("/:_id", async (req, res)=>{
             
 
  
-            updatedBag.save();
+            await updatedBag.save();
             res.send("Bag Updated");
-        });
+        
         
     }
     catch(err){

@@ -36,15 +36,15 @@ router.put("/:_id", async (req, res)=>{
     
     
     try {
-        await equipBarModel.findById(_id,  (err, updatedBar)=> {
+        const updatedBar = await equipBarModel.findById(_id)         
             updatedBar.bar[0].current= req.body.bar[0].current;
             updatedBar.bar[1].current= req.body.bar[1].current;
             updatedBar.bar[2].current= req.body.bar[2].current;
 
  
-            updatedBar.save();
+            await updatedBar.save();
             res.send("personal Updated");
-        });
+       
         
     }
     catch(err){

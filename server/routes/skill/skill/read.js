@@ -8,9 +8,9 @@ router.get("/:_id", async (req, res)=>{
 
     const _id = req.params._id;
     try {
-        await skillModel.findById(_id, (err, result)=> {
+        const result = await skillModel.findById(_id)
             res.send(result);
-        });
+        
         
     }
     catch(err){
