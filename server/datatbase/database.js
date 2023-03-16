@@ -1,7 +1,8 @@
-const express = require('express');
+require('dotenv').config();
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb+srv://eap4d:m20biw0w@cluster0.uv4nr.mongodb.net/PenAndPaper";
+const mongoURI = `mongodb+srv://${process.env.MONGO_URI_NAME}:${process.env.MONGO_URI_PASSWORD}@cluster0.uv4nr.mongodb.net/PenAndPaper`;
+
 
 //Connection to MongoDB Atlas Database Cluster
 const db = mongoose.connect(
