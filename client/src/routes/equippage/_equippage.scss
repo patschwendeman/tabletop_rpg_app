@@ -1,0 +1,155 @@
+.equippage {
+
+    h1 {
+        color: $white-color;
+    }
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+
+    .equippage__container {
+        padding: 15px;
+        background-color: $cyanLight-color;
+        height: 100%;
+        width: 100%;
+        overflow-y:auto;
+        padding-bottom: 80px;
+        border-radius: 10px;
+
+        .container__settings {
+            width: 30px;
+    
+        }
+      
+
+        h2 {
+            text-align: center;
+        }
+
+        .equippage__container--armorSection{
+
+            margin-top: 20px;
+
+            .armorSection__row {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                .armorSection__row__item {
+                    padding: 5px;
+                    border: #e8a77c solid 2px;
+                    background-color: $white-color;
+                    border-radius: 10px;
+                    width: 40%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    
+
+                    
+
+                        img {
+                            width: 50px;
+                        }
+    
+                        p {
+                            font-size: 20px;
+                        }
+                    
+
+                    
+                }
+            }
+        }
+
+        .equippage__container--infoBox {
+            border: 2px solid #e8a77c;
+            border-radius: 10px;
+            background-color: white;
+            padding: 5px 5px 5px 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+
+            .infoBox__data {
+                display: flex;
+        	    justify-content: space-between;
+            }
+            .textLine {
+                height: 2px;
+                background-color: #e8a77c;
+                border: none;
+            }
+
+            .infoBox__bar--life {
+                background-color: $lifeBar-color;
+                height: 15px;
+                border-radius: 20px;
+                margin-top: 5px;
+            }
+
+            .infoBox__bar--armor {
+                background-color: $armorBar-color;
+                height: 15px;
+                border-radius: 20px;
+                margin-top: 5px;
+            }
+
+            .infoBox__bar--mana {
+                background-color: $manaBar-color;
+                height: 15px;
+                border-radius: 20px;
+                margin-top: 5px;
+            }
+        }
+        .textLine {
+            height: 2px;
+            background-color: #e8a77c;
+            border: none;
+        }
+
+        .equippage__container--skillBox {
+            border: 2px solid #e8a77c;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 5px 5px 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .equippage__container--bag {
+            height: 300px;
+            border: 2px solid #e8a77c;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 15px;
+            width: 100%;
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 10px;
+
+
+            .bag__gold {
+                display: flex;
+                justify-content: space-between;
+                width: 40%;
+            }
+        }
+    }
+}

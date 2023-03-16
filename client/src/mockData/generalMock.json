@@ -1,0 +1,20 @@
+{
+    "general":
+    [
+        {
+            "personal" : {
+            "name": "Max",
+            "race": "Musterork",
+            "class": "Warrior",
+            "religion": "none"
+        }
+    },
+    {
+        "passive" : {
+            "honor": 99,
+            "initiative": 99,
+            "moral": 99,
+            "parade": 99
+        }}
+    ]
+}

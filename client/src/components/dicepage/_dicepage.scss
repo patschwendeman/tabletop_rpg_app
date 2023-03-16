@@ -1,0 +1,88 @@
+.dicepage {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    background-color:  $orange-color;
+    padding-top: 30px;
+    z-index: 200;
+
+    .dicepage--diceLibary {
+        display: flex;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 20%;
+        justify-content: space-around;
+        align-items: center;
+        border-top: solid $white-color 2px; 
+        background-color: $gold-color;
+
+        .dicepage--diceLibary__dice {
+            height: 80%;
+        }
+    }
+
+    .dicepage--diceCounter {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        text-align: center;
+        color: white;
+        justify-content: center;
+        border-top: solid white 2px;
+        border-bottom: solid white 2px;
+
+        .diceCounter__sum {
+            text-align: center;
+            justify-content: center;
+            font-size: 100px;
+            margin-top: auto;
+            margin-bottom: auto;   
+        }
+    }
+
+    .dicepage--diceDisplay {
+        width: 100%;
+        height: 40%;
+        left: 0;
+        right: 0;
+
+        .diceDisplay__diceQueue {
+            width: 100%;
+            height: 40%;
+            display: flex;
+            justify-content: space-around;
+            left: 0;
+            right: 0;
+            color: white;
+            background-color: $gold-color;
+            border-bottom: solid white 2px; 
+        }
+
+        .diceDisplay__buttonSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+
+
+            button {
+                width: 50%;
+                height: 30%;
+                border: none;
+                margin-bottom: 40px;
+                border-radius: 10px;
+                border: solid $white-color 2px;
+                background-color: $gold-color;
+                color: $white-color;
+                font-size: 20px;
+            }
+        }
+    }
+
+
+}
